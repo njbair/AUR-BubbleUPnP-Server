@@ -1,9 +1,0 @@
-[Unit]
-Description=BubbleUPnP Server
-
-[Service]
-ExecStart=/usr/share/bubbleupnpserver/bubbleupnpserver.sh
-SuccessExitStatus=1 2 SIGKILL
-
-[Install]
-WantedBy=network.target

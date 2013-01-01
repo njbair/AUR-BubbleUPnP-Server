@@ -1,4 +1,4 @@
-# Maintainer: Your Name <youremail@domain.com>
+# Maintainer: Nick Bair <njbair at gmail dot com>
 pkgname=bubbleupnpserver
 pkgver=0.6.3
 pkgrel=1
@@ -25,7 +25,6 @@ build() {
   msg2 "Shifting some files around..."
   install -D -m644 ${srcdir}/etc/default/${pkgname} ${pkgdir}/etc/default/${pkgname}
   install -D -m644 ${pkgdir}/usr/share/${pkgname}/LICENCE.txt ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
-  install -D -m644 ${startdir}/${pkgname}.service ${pkgdir}/usr/lib/systemd/system/${pkgname}.service
 
   msg2 "Converting upstart script..."
   echo "#!/bin/sh" > ${pkgdir}/usr/share/${pkgname}/${pkgname}.sh
@@ -34,6 +33,18 @@ build() {
     | sed -r 's/^(\t|env )//' \
     | sed '/^$/N;/^\n$/D' \
     >> ${pkgdir}/usr/share/${pkgname}/${pkgname}.sh
+
+  msg2 "Installing systemd service unit file..."
+  echo "[Unit]
+Description=BubbleUPnP Server
+
+[Service]
+ExecStart=/usr/share/${pkgname}/${pkgname}.sh
+SuccessExitStatus=1 2 SIGKILL
+
+[Install]
+WantedBy=network.target" > ${srcdir}/${pkgname}.service
+  install -D -m644 ${srcdir}/${pkgname}.service ${pkgdir}/usr/lib/systemd/system/${pkgname}.service
 
   msg2 "Making startup scripts executable..."
   chmod +x ${pkgdir}/usr/share/${pkgname}/{${pkgname},launch}.sh
