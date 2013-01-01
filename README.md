@@ -8,5 +8,10 @@ Arch Linux users to easily install BubbleUPnP Server. It is based on the
 vendor's Ubuntu package and modified to work with systemd rather than
 Upstart.
 
-## More about BubbleUPnP Server: 
+### AUR
+The latest stable version of this package is always available in the
+Arch User Repository at:
+https://aur.archlinux.org/packages/bubbleupnpserver/
+
+### More about BubbleUPnP Server: 
 http://www.bubblesoftapps.com/bubbleupnpserver/#what_is_bubble_upnp_server
