@@ -2,7 +2,7 @@
 pkgname=bubbleupnpserver
 pkgver=0.6.4
 pkgver_suffix="-1_all"
-pkgrel=2
+pkgrel=1
 pkgdesc="Stream UPnP content to Android devices over the Internet"
 arch=('any')
 url="http://www.bubblesoftapps.com/bubbleupnpserver/"
