@@ -1,4 +1,4 @@
-# BubbleUPnP Server 0.6.3 for Arch Linux
+# BubbleUPnP Server 0.6.4 for Arch Linux
 BubbleUPnP Server is a small Java application designed to provide secure
 Internet access to your existing UPnP/DLNA content. It works with
 BubbleUPnP for Android as well as foobar2000.
