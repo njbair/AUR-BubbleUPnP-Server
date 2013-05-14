@@ -14,7 +14,7 @@ noextract=("BubbleUPnPServer-${pkgver}.zip")
 md5sums=('27321aac68d5fcc75d756b0454637516'
          'ad1fb94185a9a22bd60fe6f7b7abbf3e')
 
-build() {
+package() {
   cd ${srcdir}
 
   msg2 "Extracting files..."
